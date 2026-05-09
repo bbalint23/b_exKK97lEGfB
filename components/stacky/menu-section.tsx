@@ -2,11 +2,10 @@
 
 import { motion } from "framer-motion"
 import { UtensilsCrossed } from "lucide-react"
-import Image from "next/image"
 
 export function MenuSection() {
   return (
-    <section id="menu" className="py-20 lg:py-32 bg-background">
+    <section id="menu" className="py-20 lg:py-32 bg-[#fff5ec]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -15,19 +14,16 @@ export function MenuSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#00674b]/10 text-[#00674b] px-4 py-2 rounded-xl mb-4 border border-[#00674b]/20">
             <UtensilsCrossed className="w-4 h-4" />
-            <span className="text-sm font-medium">KÍNÁLATUNK</span>
+            <span className="text-sm font-bold tracking-widest uppercase">KÍNÁLATUNK</span>
           </div>
           <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight"
+            className="text-4xl sm:text-5xl font-black text-[#00674b] tracking-tight"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Étlapunk
           </h2>
-          <p className="mt-4 text-secondary/70 max-w-2xl mx-auto font-light">
-            Fedezd fel a menünket és válaszd ki a kedvenced!
-          </p>
         </motion.div>
 
         <motion.div
@@ -38,31 +34,31 @@ export function MenuSection() {
           className="flex justify-center"
         >
           <div className="relative w-full max-w-4xl">
-            <div className="relative bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10">
+            <div className="bg-white rounded-3xl shadow-2xl shadow-[#00674b]/10 overflow-hidden border border-[#00674b]/10">
               
-              {/* MOBIL VERZIÓ: Csak kis képernyőn látszik (9:16 arány a 1080x1920-hoz) */}
-              <div className="block md:hidden relative aspect-[9/16] w-full">
-                <Image
+              {/* MOBIL NÉZET: Ezzel már nem lesz vékony csík */}
+              <div className="block md:hidden w-full">
+                <img
                   src="/images/menu_telefon.jpg"
                   alt="STACKY Mobil Étlap"
-                  fill
-                  priority
-                  className="object-contain"
+                  className="w-full h-auto block"
                 />
               </div>
 
-              {/* DESKTOP VERZIÓ: Csak md (768px) méret felett látszik */}
-              <div className="hidden md:block relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full">
-                <Image
+              {/* ASZTALI NÉZET */}
+              <div className="hidden md:block w-full">
+                <img
                   src="/images/menu_asztal.jpg"
                   alt="STACKY Asztali Étlap"
-                  fill
-                  priority
-                  className="object-contain"
+                  className="w-full h-auto block"
                 />
               </div>
 
             </div>
+            
+            <p className="text-center mt-6 text-[#00674b]/50 text-[10px] font-bold uppercase tracking-[0.2em] md:hidden">
+              Húzz lefelé a teljes kínálathoz
+            </p>
           </div>
         </motion.div>
       </div>
