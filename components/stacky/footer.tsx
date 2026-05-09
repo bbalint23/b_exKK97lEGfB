@@ -29,7 +29,7 @@ export function Footer() {
           >
             <Link href="/" className="inline-block">
               <span 
-                className="text-2xl font-bold text-primary"
+                className="text-2xl font-bold text-primary-foreground"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
                 STACKY
@@ -64,14 +64,14 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <Clock className="w-5 h-5 text-primary" />
+              <Clock className="w-5 h-5 text-primary-foreground" />
               <h3 className="font-medium text-background">Nyitvatartás</h3>
             </div>
             <div className="space-y-2">
               {openingHours.map(({ day, hours }) => (
                 <div key={day} className="flex justify-between text-sm">
                   <span className="text-background/60 font-light">{day}</span>
-                  <span className={hours === "Zárva" ? "text-primary" : "text-background/90"}>
+                  <span className={hours === "Zárva" ? "text-primary-foreground" : "text-background/90"}>
                     {hours}
                   </span>
                 </div>
@@ -86,13 +86,22 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <MapPin className="w-5 h-5 text-primary" />
+              <MapPin className="w-5 h-5 text-primary-foreground" />
               <h3 className="font-medium text-background">Címünk</h3>
             </div>
-            <address className="not-italic text-background/60 text-sm leading-relaxed font-light">
-              Nyíregyháza<br />
-              
-            </address>
+         <address className="not-italic text-primary-foreground/70 text-sm leading-relaxed font-light">
+  <span className="font-semibold text-primary-foreground">Stacky Burger Nyíregyháza</span><br />
+  <a 
+    href="https://www.google.com/maps/place/Nyíregyháza,+Szarvas+u.+44,+4400/@47.9486603,21.7157729,74m/data=!3m1!1e3!4m6!3m5!1s0x47389fc1290736a3:0x542cbd2ab9f33ec2!8m2!3d47.9485933!4d21.7159714!16s%2Fg%2F11j72v59dq?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="hover:text-primary transition-colors"
+  >
+    4400 Nyíregyháza, Kossuth utca 1.
+  </a><br />
+  Tel: <a href="tel:+36301234567" className="hover:primary transition-colors">+36 30 123 4567</a><br />
+  Email: <a href="mailto:hello@stacky.hu" className="hover:chart-4 transition-colors">hello@stacky.hu</a>
+</address>
           </motion.div>
         </div>
 

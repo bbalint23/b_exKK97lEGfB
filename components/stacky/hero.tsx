@@ -44,14 +44,14 @@ export function Hero() {
             >
               <Link
                 href="#menu"
-                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-background px-6 py-3 rounded-xl text-base font-medium transition-all active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-primary/90 text-background px-6 py-3 rounded-xl text-base font-medium transition-all active:scale-[0.98]"
               >
                 Irány az étlap
                 <ArrowDown className="w-4 h-4" />
               </Link>
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 bg-secondary/10 hover:bg-secondary/15 text-secondary px-6 py-3 rounded-xl text-base font-medium transition-all active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 bg-primary/20 hover:bg-secondary/15 text-secondary px-6 py-3 rounded-xl text-base font-medium transition-all active:scale-[0.98]"
               >
                 Kapcsolat
               </Link>

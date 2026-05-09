@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Outfit, Space_Grotesk } from 'next/font/google' //Inter csere Outfit-re
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+// Ez lesz az alapértelmezett betűtípus (folyó szöveg, leírások)
+const outfit = Outfit({ 
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: '--font-outfit'
 });
 
+// Ez marad a címeknek (H1, H2, H3), mert van egy kis "éle"
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
   variable: '--font-space-grotesk'
@@ -43,7 +45,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="scroll-smooth bg-background">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      {/* 
+          A 'font-sans' mostantól az Outfit lesz, 
+          a címeknél pedig majd manuálisan a 'font-heading' osztályt 
+      */}
+      <body className={`${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

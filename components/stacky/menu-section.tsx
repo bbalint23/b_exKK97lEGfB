@@ -41,22 +41,13 @@ export function MenuSection() {
             <div className="relative bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10">
               <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] relative">
                 <Image
-                  src="/images/menu.png"
+                  src="/images/zold.png"
                   alt="STACKY Etlap"
                   fill
+                  priority
                   className="object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-muted">
-                  <div className="text-center p-8">
-                    <UtensilsCrossed className="w-16 h-16 text-secondary/30 mx-auto mb-4" />
-                    <p className="text-secondary/50 text-sm">
-                      Upload your menu image here
-                    </p>
-                    <p className="text-secondary/30 text-xs mt-2">
-                      Recommended: High-quality JPG or PNG
-                    </p>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

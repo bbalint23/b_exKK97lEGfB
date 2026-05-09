@@ -5,20 +5,17 @@ import { MapPin, Send, MessageSquare } from "lucide-react"
 import { useState } from "react"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({ name: "", message: "" })
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
     setIsSubmitting(false)
     setIsSubmitted(true)
-    setFormData({ name: "", message: "" })
-    
+    setFormData({ name: "", email: "", message: "" })
     setTimeout(() => setIsSubmitted(false), 3000)
   }
 
@@ -32,27 +29,28 @@ export function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-xl mb-4">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-xl mb-4">
             <MessageSquare className="w-4 h-4" />
-            <span className="text-sm font-medium">Írj nekünk</span>
+            <span className="text-sm font-medium uppercase tracking-wider">Kapcsolat</span>
           </div>
           <h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Kapcsolat
+            Kérdésed van? Írj nekünk!
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          {/* Üzenetküldő Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 p-6 sm:p-8 border border-secondary/10">
-              <h3 className="text-lg font-medium text-secondary mb-6">Küldj üzenetet</h3>
+            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 p-6 sm:p-8 border border-secondary/10 h-full">
+              <h3 className="text-lg font-medium text-secondary mb-6">Üzenet küldése</h3>
               
               {isSubmitted ? (
                 <motion.div
@@ -63,89 +61,87 @@ export function ContactSection() {
                   <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Send className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="text-secondary font-medium">Köszönjük az üzeneted!</p>
+                  <p className="text-secondary font-medium">Köszönjük!</p>
                   <p className="text-secondary/60 text-sm mt-1 font-light">Hamarosan válaszolunk.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-secondary mb-2">
-                      Név
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
-                      placeholder="A neved"
-                    />
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">Név</label>
+                      <input
+                        type="text"
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm"
+                        placeholder="Hogy hívnak?"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">E-mail</label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm"
+                        placeholder="pelda@email.com"
+                      />
+                    </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-secondary mb-2">
-                      Üzenet
-                    </label>
+                    <label htmlFor="message" className="block text-xs font-medium text-secondary mb-1.5 uppercase tracking-wider">Üzenet</label>
                     <textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
-                      placeholder="Írd ide az üzeneted..."
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-xl border border-secondary/15 bg-background text-secondary placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none text-sm"
+                      placeholder="Miben segíthetünk?"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-background font-medium py-3 px-6 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full bg-primary hover:bg-primary/90 text-background font-medium py-4 px-6 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
-                      <span>Küldés...</span>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        <span>Küldés</span>
-                      </>
-                    )}
+                    {isSubmitting ? <span>Küldés...</span> : <><Send className="w-4 h-4" /><span>Üzenet elküldése</span></>}
                   </button>
                 </form>
               )}
             </div>
           </motion.div>
 
+          {/* Cím és Térkép */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10">
-              <div className="p-6 border-b border-secondary/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-secondary">Elérhetőség</h3>
-                    <p className="text-sm text-secondary/60 font-light">Nyíregyháza, Hungary</p>
-                  </div>
-                </div>
+            <div className="bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10 h-full flex flex-col">
+              <div className="p-4 border-b border-secondary/10 flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-primary shrink-0" />
+                <p className="text-xs text-secondary/70 font-medium uppercase tracking-widest">
+                  4400 Nyíregyháza, Kossuth utca 1.
+                </p>
               </div>
               
-              <div className="aspect-[4/3] bg-muted/50 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-10 h-10 text-secondary/30 mx-auto mb-2" />
-                    <p className="text-secondary/50 text-sm">
-                      Ide jön majd a gugli map
-                    </p>
-                    <p className="text-secondary/30 text-xs mt-1">
-                      Integrate Google Maps or embed here
-                    </p>
-                  </div>
-                </div>
+              <div className="flex-grow min-h-[300px] relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.04487005869723!2d21.715851251869314!3d47.94840011346255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47389fc12eb206fd%3A0x8627f4091cb6a8f3!2sNy%C3%ADregyh%C3%A1za%2C%20Szarvas%20u.%2040%2C%204400!5e0!3m2!1sen!2shu!4v1778312486543!5m2!1sen!2shu"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0 grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                ></iframe>
               </div>
             </div>
           </motion.div>

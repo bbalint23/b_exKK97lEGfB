@@ -54,7 +54,7 @@ export function Header() {
               href="#menu"
               className="text-secondary hover:text-primary transition-colors text-sm font-medium"
             >
-              Étlap
+              ÉTLAP
             </Link>
             <Link
               href="#faq"
@@ -66,7 +66,7 @@ export function Header() {
               href="#contact"
               className="text-secondary hover:text-primary transition-colors text-sm font-medium"
             >
-              Kapcsolat
+              KAPCSOLAT
             </Link>
           </nav>
 
@@ -96,7 +96,7 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-secondary hover:text-primary transition-colors text-sm font-medium"
               >
-                Étlap
+                ÉTLAP
               </Link>
               <Link
                 href="#faq"
@@ -110,7 +110,7 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-secondary hover:text-primary transition-colors text-sm font-medium"
               >
-                Kapcsolat
+                KAPCSOLAT
               </Link>
             </div>
           </motion.div>
