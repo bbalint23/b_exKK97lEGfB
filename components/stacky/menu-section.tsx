@@ -39,16 +39,29 @@ export function MenuSection() {
         >
           <div className="relative w-full max-w-4xl">
             <div className="relative bg-background rounded-2xl shadow-xl shadow-secondary/5 overflow-hidden border border-secondary/10">
-              <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] relative">
+              
+              {/* MOBIL VERZIÓ: Csak kis képernyőn látszik (9:16 arány a 1080x1920-hoz) */}
+              <div className="block md:hidden relative aspect-[9/16] w-full">
                 <Image
-                  src="/images/zold.png"
-                  alt="STACKY Etlap"
+                  src="/images/menu_telefon.jpg"
+                  alt="STACKY Mobil Étlap"
                   fill
                   priority
                   className="object-contain"
                 />
-                
               </div>
+
+              {/* DESKTOP VERZIÓ: Csak md (768px) méret felett látszik */}
+              <div className="hidden md:block relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full">
+                <Image
+                  src="/images/menu_asztal.jpg"
+                  alt="STACKY Asztali Étlap"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
             </div>
           </div>
         </motion.div>

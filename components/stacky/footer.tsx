@@ -36,7 +36,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-background/70 max-w-xs font-light">
-              A legropogosabb szelu smash burgerek Nyíregyhazán. Gyere es kostold meg!
+              Smashburger úgy, ahogy kell. Gyere és kóstold meg!
             </p>
             
             <div className="flex gap-3 mt-6">
@@ -90,7 +90,7 @@ export function Footer() {
               <h3 className="font-medium text-background">Címünk</h3>
             </div>
          <address className="not-italic text-primary-foreground/70 text-sm leading-relaxed font-light">
-  <span className="font-semibold text-primary-foreground">Stacky Burger Nyíregyháza</span><br />
+  <span className="font-semibold text-primary-foreground">STACKY Smashburgers & more - Nyíregyháza</span><br />
   <a 
     href="https://www.google.com/maps/place/Nyíregyháza,+Szarvas+u.+44,+4400/@47.9486603,21.7157729,74m/data=!3m1!1e3!4m6!3m5!1s0x47389fc1290736a3:0x542cbd2ab9f33ec2!8m2!3d47.9485933!4d21.7159714!16s%2Fg%2F11j72v59dq?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" 
     target="_blank" 

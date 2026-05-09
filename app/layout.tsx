@@ -3,13 +3,13 @@ import { Outfit, Space_Grotesk } from 'next/font/google' //Inter csere Outfit-re
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-// Ez lesz az alapértelmezett betűtípus (folyó szöveg, leírások)
+// Ez lesz az alapértelmezett betűtípus
 const outfit = Outfit({ 
   subsets: ["latin"],
   variable: '--font-outfit'
 });
 
-// Ez marad a címeknek (H1, H2, H3), mert van egy kis "éle"
+// Ez marad a címeknek (H1, H2, H3)
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
   variable: '--font-space-grotesk'
@@ -20,21 +20,8 @@ export const metadata: Metadata = {
   description: 'A legropogósabb szélű smash burgerek Nyíregyházán. Látogass el hozzánk és kóstold meg a legjobb smash burgereket!',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: "/stacky_logo.svg", // Ez a fő ikon a böngésző fülre
+    apple: "/stacky_logo.svg", // Mobilos "kezdőképernyőhöz" is jó lesz ez egyelőre  
   },
 }
 

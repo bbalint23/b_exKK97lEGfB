@@ -70,7 +70,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
 }
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   // Strukturált adatok a Google számára
   const jsonLd = {
@@ -113,7 +113,7 @@ export function FAQSection() {
             Gyakori kérdések
           </h2>
           <p className="mt-4 text-secondary/70 max-w-2xl mx-auto font-light">
-            Válaszok a leggyakrabban felmerülő kérdésekre a Stacky Burgerrel kapcsolatban.
+            Válaszok a leggyakrabban felmerülő kérdésekre a STACKY-vel kapcsolatban.
           </p>
         </motion.div>
 
