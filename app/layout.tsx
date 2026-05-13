@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: 'STACKY Smashburgers & more | Nyíregyháza',
   description: 'A legropogósabb szélű smash burgerek Nyíregyházán. Látogass el hozzánk és kóstold meg a legjobb smash burgereket!',
   generator: 'v0.app',
+  verification: {
+    google: '9Oqyw2B77jK7QKLJdcpQnFNXRoP_HNJJ0Kn_GIzNkpE',
+  },
   icons: {
     icon: [
       { url: "/stacky_logo.svg" }, // Alapértelmezett
