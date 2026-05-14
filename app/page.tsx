@@ -2,13 +2,14 @@
 
 import { Header } from "@/components/stacky/header"
 import { Hero } from "@/components/stacky/hero"
+import MonthlySpecial from '@/components/MonthlySpecial' // Az új komponens importálása
 import { MenuSection } from "@/components/stacky/menu-section"
 import { FAQSection } from "@/components/stacky/faq-section"
 import { ContactSection } from "@/components/stacky/contact-section"
 import { Footer } from "@/components/stacky/footer"
 
 export default function Home() {
-  const isComingSoon = true;
+  const isComingSoon = false;  // true/false kapcsoló a coming soon oldalhoz
 
   if (isComingSoon) {
     return (
@@ -17,7 +18,7 @@ export default function Home() {
         {/* LOGO - Minimalista verzió */}
         <div className="mb-16">
           <div className="h-20 w-20 rounded-xl bg-[#fff5ec] flex items-center justify-center shadow-2xl">
-            <span className="text-5xl font-black text-[#00674b] italic">S</span>
+            <span className="text-5xl font-black text-[#00674b]">S</span>
           </div>
         </div>
         
@@ -33,7 +34,6 @@ export default function Home() {
 
         {/* KOCKÁS TÖLTŐSÁV ANIMÁCIÓ */}
         <div className="flex gap-2">
-          {/* 5 darab kocka, mindegyik más késleltetéssel (delay) villan fel */}
           {[0, 1, 2, 3, 4].map((i) => (
             <div 
               key={i}
@@ -53,7 +53,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Egy kis extra stílus az animációhoz, hogy ne csak villogjon, hanem folyamatos legyen */}
         <style jsx>{`
           @keyframes pulse {
             0%, 100% { opacity: 0.2; transform: scale(1); }
@@ -71,6 +70,10 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+      
+      {/* Itt jelenik meg a Hónap Burgere ajánlat */}
+      <MonthlySpecial />
+      
       <MenuSection />
       <FAQSection />
       <ContactSection />
