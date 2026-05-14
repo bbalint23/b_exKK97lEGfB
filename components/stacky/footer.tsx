@@ -97,7 +97,7 @@ export function Footer() {
     rel="noopener noreferrer" 
     className="hover:text-primary transition-colors"
   >
-    4400 Nyíregyháza, Kossuth utca 1.
+    4400 Nyíregyháza, xx utca xx.
   </a><br />
   Tel: <a href="tel:+36301234567" className="hover:primary transition-colors">+36 30 123 4567</a><br />
   Email: <a href="mailto:hello@stacky.hu" className="hover:chart-4 transition-colors">hello@stacky.hu</a>
