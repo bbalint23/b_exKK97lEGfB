@@ -127,7 +127,7 @@ export function ContactSection() {
               <div className="p-4 border-b border-secondary/10 flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <p className="text-xs text-secondary/70 font-medium uppercase tracking-widest">
-                  4400 Nyíregyháza, Kossuth utca 1.
+                  4400 Nyíregyháza, xxx utca xx.
                 </p>
               </div>
               
