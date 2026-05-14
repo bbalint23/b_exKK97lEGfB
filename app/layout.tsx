@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Outfit, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
+import CookieBanner from '@/components/CookieBanner' // Importáljuk az új komponenst
 import './globals.css'
 
 // Betűtípusok beállítása
@@ -19,21 +20,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://stackyburger.hu'),
   title: 'STACKY Smashburgers & more | Nyíregyháza',
   description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
-keywords: [
-  'smash burger', 
-  'Nyíregyháza', 
-  'hamburger Nyíregyháza', 
-  'kajarendelés Nyíregyháza', 
-  'ételrendelés', 
-  'street food',
-  'smashburger nyíregyháza',
-  'hamburger nyíregyháza',
-  'smash burger nyíregyháza', 
-  'STACKY', 
-  'ebéd rendelés', 
-  'vacsora Nyíregyháza'
-],
-  robots: 'index, follow', // <--- ÚJ
+  keywords: [
+    'smash burger', 
+    'Nyíregyháza', 
+    'hamburger Nyíregyháza', 
+    'kajarendelés Nyíregyháza', 
+    'ételrendelés', 
+    'street food',
+    'smashburger nyíregyháza',
+    'smash burger nyíregyháza', 
+    'STACKY', 
+    'ebéd rendelés', 
+    'vacsora Nyíregyháza'
+  ],
+  robots: 'index, follow',
   generator: 'v0.app',
   verification: {
     google: '9Oqyw2B77jK7QKLJdcpQnFNXRoP_HNJJ0Kn_GIzNkpE',
@@ -48,7 +48,7 @@ keywords: [
   },
   openGraph: {
     title: 'STACKY Smashburgers & more | Nyíregyháza',
-    description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre',
+    description: 'Valami készülődik Nyíregyházán, ami után már nem fogsz ugyanúgy nézni egy smashburgerre. A visszaszámlálás elindult. Készülj a STACKY élményre!',
     url: 'https://stackyburger.hu',
     siteName: 'STACKY',
     images: [
@@ -75,7 +75,7 @@ function RestaurantSchema() {
     "servesCuisine": "American, Smash Burger",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Szarvas utca 46", // <--- PONTOS CÍM HELYE
+      "streetAddress": "Szarvas utca 46",
       "addressLocality": "Nyíregyháza",
       "postalCode": "4400",
       "addressCountry": "HU"
@@ -165,8 +165,8 @@ export default function RootLayout({
       <body className={`${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
-        {/* Itt hívjuk meg a SEO adatokat */}
         <RestaurantSchema />
+        <CookieBanner /> {/* <--- A banner most már minden oldalon ott lesz */}
       </body>
     </html>
   )
