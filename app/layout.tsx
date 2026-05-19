@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     'ebéd rendelés', 
     'vacsora Nyíregyháza'
   ],
-  robots: 'index, follow',
+  robots: 'index, follow', //Google és más robotoknak útmutatás
   generator: 'v0.app',
   verification: {
     google: '9Oqyw2B77jK7QKLJdcpQnFNXRoP_HNJJ0Kn_GIzNkpE',
@@ -75,7 +75,7 @@ function RestaurantSchema() {
     "servesCuisine": "American, Smash Burger",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Szarvas utca 46",
+      "streetAddress": "Szarvas utca 000",
       "addressLocality": "Nyíregyháza",
       "postalCode": "4400",
       "addressCountry": "HU"
