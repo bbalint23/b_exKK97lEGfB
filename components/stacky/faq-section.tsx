@@ -40,8 +40,8 @@ function FAQItem({ question, answer, isOpen, onClick }: {
         className="w-full py-5 flex items-center justify-between text-left group"
         aria-expanded={isOpen}
       >
-        {/* SEO tipp: a kérdés h3 lett */}
-        <h3 className="text-base font-medium text-secondary pr-4">{question}</h3>
+        {/* SEO tipp: a kérdés h3 lett, de megtartja a tiszta font-sans olvashatóságot */}
+        <h3 className="text-base font-sans font-medium text-secondary pr-4">{question}</h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -106,10 +106,7 @@ export function FAQSection() {
             <HelpCircle className="w-4 h-4" />
             <span className="text-sm font-medium uppercase tracking-wider">Kérdések</span>
           </div>
-          <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight">
             Gyakori kérdések
           </h2>
           <p className="mt-4 text-secondary/70 max-w-2xl mx-auto font-light">

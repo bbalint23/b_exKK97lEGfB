@@ -15,18 +15,21 @@ export default function Home() {
     return (
       <main className="relative flex min-h-screen flex-col items-center justify-center bg-[#00674b] px-6">
         
-        {/* LOGO - Minimalista verzió */}
+        {/* LOGO - Minimalista verzió a Luckiest Guy betűvel */}
         <div className="mb-16">
           <div className="h-20 w-20 rounded-xl bg-[#fff5ec] flex items-center justify-center shadow-2xl">
-            <span className="text-5xl font-black text-[#00674b]">S</span>
+            <span className="text-5xl font-luckiest text-[#00674b] pt-1">S</span>
           </div>
         </div>
         
         {/* SZÖVEG */}
         <div className="text-center mb-12">
-          <h1 className="font-outfit text-4xl md:text-6xl font-black text-[#fff5ec] uppercase tracking-tighter italic">
-            STACKY Smashburgers & more
+          <h1 className="font-luckiest text-4xl md:text-6xl text-[#fff5ec] tracking-wide">
+            STACKY
           </h1>
+          <p className="mt-2 font-space-grotesk text-[#fff5ec]/80 text-xs md:text-sm tracking-[0.15em] uppercase font-bold">
+            Smashburgers & more
+          </p>
           <p className="mt-4 font-space-grotesk text-[#fff5ec]/60 text-sm md:text-base tracking-[0.2em] uppercase">
             Nyíregyháza, belváros // HAMAROSAN
           </p>

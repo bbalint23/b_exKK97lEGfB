@@ -33,10 +33,7 @@ export function ContactSection() {
             <MessageSquare className="w-4 h-4" />
             <span className="text-sm font-medium uppercase tracking-wider">Kapcsolat</span>
           </div>
-          <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-secondary tracking-tight">
             Kérdésed van? Írj nekünk!
           </h2>
         </motion.div>
@@ -127,7 +124,7 @@ export function ContactSection() {
               <div className="p-4 border-b border-secondary/10 flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <p className="text-xs text-secondary/70 font-medium uppercase tracking-widest">
-                  4400 Nyíregyháza, xxx utca xx.
+                  4400 Nyíregyháza, xx utca
                 </p>
               </div>
               
@@ -140,7 +137,7 @@ export function ContactSection() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 grayscale contrast-125 opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  className="absolute inset-0 opacity-90 hover:opacity-100 transition-all duration-500"
                 ></iframe>
               </div>
             </div>

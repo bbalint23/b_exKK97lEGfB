@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Outfit, Space_Grotesk } from 'next/font/google'
+import { Outfit, Space_Grotesk, Luckiest_Guy } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import CookieBanner from '@/components/CookieBanner' // Importáljuk az új komponenst
@@ -14,6 +14,12 @@ const outfit = Outfit({
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ["latin"],
   variable: '--font-space-grotesk'
+});
+
+const luckiestGuy = Luckiest_Guy({
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-luckiest'
 });
 
 export const metadata: Metadata = {
@@ -162,7 +168,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="scroll-smooth bg-background">
-      <body className={`${outfit.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      <body className={`${outfit.variable} ${spaceGrotesk.variable} ${luckiestGuy.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <RestaurantSchema />

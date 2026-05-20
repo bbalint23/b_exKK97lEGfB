@@ -10,6 +10,8 @@ export function Hero() {
     <section className="relative min-h-screen bg-background overflow-hidden pt-16">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+          
+          {/* BAL OLDAL: SZÖVEGEK */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,15 +24,20 @@ export function Hero() {
               Nyíregyháza, belváros
             </div>
 
-            <h1 
-              className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-secondary"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              <span className="text-primary">STACKY</span>
+            {/* FŐCÍM - Optimalizált all-caps méretekkel */}
+            <h1 className="leading-[1.1] text-secondary">
+              {/* STACKY - A nagy, egyedi fókuszpont */}
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-luckiest uppercase tracking-wide text-primary">
+                STACKY
+              </span>
               <br />
-              <span>Smashburgers</span>
-              <br />
-              <span className="text-secondary/80 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-normal">& more</span>
+              {/* SMASHBURGERS & MORE - Kisebb, finomabb, all-caps blokk */}
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black tracking-tight block mt-3">
+                SMASHBURGERS
+              </span>
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black tracking-tight block text-secondary/80">
+                & MORE
+              </span>
             </h1>
             
             <motion.p
@@ -49,7 +56,6 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              {/* PRIMARY - ZÖLD GOMB */}
               <Link
                 href="#menu"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#22c55e] px-7 py-4 text-base font-bold text-white shadow-lg shadow-[#22c55e]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#22c55e]/50 active:scale-95"
@@ -58,7 +64,6 @@ export function Hero() {
                 <ArrowDown className="w-4 h-4" />
               </Link>
 
-              {/* SECONDARY - MUTED GOMB */}
               <Link
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary/10 bg-transparent px-7 py-4 text-base font-bold text-secondary transition-all duration-300 hover:-translate-y-1 hover:bg-secondary/5 active:scale-95"
@@ -68,13 +73,26 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-md lg:max-w-lg aspect-square">
+          {/* JOBB OLDAL: FINOMAN LEBEGŐ KÉP */}
+          <div className="relative flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ 
+                opacity: 1, 
+                scale: 1,
+                y: [0, -15, 0]
+              }}
+              transition={{
+                opacity: { duration: 0.8, delay: 0.4 },
+                scale: { duration: 0.8, delay: 0.4 },
+                y: {
+                  repeat: Infinity,
+                  duration: 4,
+                  ease: "easeInOut"
+                }
+              }}
+              className="relative w-full max-w-md lg:max-w-lg aspect-square select-none"
+            >
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-secondary/10 border border-secondary/5">
                 <Image
                   src="/images/hero-burger.jpg"
@@ -84,11 +102,13 @@ export function Hero() {
                   priority
                 />
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
 
+      {/* LEFELÉ NYÍL */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

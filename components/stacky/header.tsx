@@ -30,16 +30,12 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      // A háttér a te krémfehér színed (#fff5ec) 80%-os átlátszósággal
       className="fixed top-0 left-0 right-0 z-50 bg-[#fff5ec]/80 backdrop-blur-xl border-b border-[#00674b]/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <Link href="/" className="flex items-center group">
-            <span 
-              className="text-xl sm:text-2xl font-bold tracking-tight text-[#00674b] transition-transform group-hover:scale-105" 
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
+            <span className="text-2xl sm:text-3xl font-luckiest tracking-wide text-[#00674b] transition-transform group-hover:scale-105 pt-1">
               STACKY
             </span>
           </Link>
