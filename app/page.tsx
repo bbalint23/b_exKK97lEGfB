@@ -9,7 +9,7 @@ import { ContactSection } from "@/components/stacky/contact-section"
 import { Footer } from "@/components/stacky/footer"
 
 export default function Home() {
-  const isComingSoon = true;  // true/false kapcsoló a coming soon oldalhoz
+  const isComingSoon = false;  // true/false kapcsoló a coming soon oldalhoz
 
   if (isComingSoon) {
     return (
